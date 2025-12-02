@@ -79,7 +79,8 @@ export const useRenderStore = defineStore(`render`, () => {
 
     // 渲染 Markdown
     const { html: baseHtml, readingTime: readingTimeResult } = renderMarkdown(content, renderer)
-
+    console.log(`readingTimeResult`, readingTimeResult)
+    console.log(`baseHtml`, baseHtml)
     // 更新统计信息
     readingTime.chars = content.length
     readingTime.words = readingTimeResult.words

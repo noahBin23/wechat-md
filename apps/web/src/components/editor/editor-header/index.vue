@@ -237,6 +237,11 @@ function copyToWeChat() {
   copyMode.value = 'txt'
   copy()
 }
+
+function copyToHtml() {
+  copyMode.value = 'html'
+  copy()
+}
 </script>
 
 <template>
@@ -280,6 +285,15 @@ function copyToWeChat() {
 
     <!-- 右侧操作区 -->
     <div class="flex flex-wrap items-center gap-2">
+      <!-- 复制按钮 -->
+      <Button
+        variant="outline"
+        class="h-9"
+        @click="copyToHtml"
+      >
+        <!--        <Copy class="mr-2 h-4 w-4" /> -->
+        <span>复制HTML</span>
+      </Button>
       <!-- 复制按钮 -->
       <Button
         variant="outline"

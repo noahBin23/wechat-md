@@ -22,24 +22,36 @@ async function startPost() {
     return
 
   try {
-    window.$syncer?.addTask(
-      {
-        post: {
-          title: props.post.title,
-          content: props.post.content,
-          markdown: props.post.markdown,
-          thumb: props.post.thumb,
-          desc: props.post.desc,
-        },
-        accounts: props.post.accounts.filter(a => a.checked),
-      },
-      (newStatus: any) => {
-        taskStatus.value = newStatus
-      },
-      () => {
-        submitting.value = false
-      },
-    )
+    const post = {
+      title: props.post.title,
+      content: props.post.content,
+      markdown: props.post.markdown,
+      thumb: props.post.thumb,
+      desc: props.post.desc,
+    }
+
+    console.log('post', post)
+    // TODO 在这里添加发布的逻辑
+
+    submitting.value = false
+    // window.$syncer?.addTask(
+    //   {
+    //     post: {
+    //       title: props.post.title,
+    //       content: props.post.content,
+    //       markdown: props.post.markdown,
+    //       thumb: props.post.thumb,
+    //       desc: props.post.desc,
+    //     },
+    //     accounts: props.post.accounts.filter(a => a.checked),
+    //   },
+    //   (newStatus: any) => {
+    //     taskStatus.value = newStatus
+    //   },
+    //   () => {
+    //
+    //   },
+    // )
   }
   catch (error) {
     console.error(`发布失败:`, error)
